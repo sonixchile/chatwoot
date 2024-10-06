@@ -67,7 +67,7 @@ export default {
     },
     showSignupLink() {
       return parseBoolean(window.chatwootConfig.signupEnabled);
-    },
+    }, 
   },
   created() {
     if (this.ssoAuthToken) {
@@ -151,22 +151,19 @@ export default {
   >
     <section class="max-w-5xl mx-auto">
       <img
-        :src="globalConfig.logo"
+        :src="'https://storage.googleapis.com/chileback/serviceit/logo.png'"
         :alt="globalConfig.installationName"
         class="block w-auto h-8 mx-auto dark:hidden"
       />
       <img
         v-if="globalConfig.logoDark"
-        :src="globalConfig.logoDark"
+        :src="'https://storage.googleapis.com/chileback/serviceit/logo_dark.png'"
         :alt="globalConfig.installationName"
         class="hidden w-auto h-8 mx-auto dark:block"
       />
       <h2
         class="mt-6 text-3xl font-medium text-center text-slate-900 dark:text-woot-50"
-      >
-        {{
-          useInstallationName($t('LOGIN.TITLE'), globalConfig.installationName)
-        }}
+      > Login to ServiceIT
       </h2>
       <p
         v-if="showSignupLink"
